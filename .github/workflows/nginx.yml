@@ -13,4 +13,4 @@ jobs:
     - run: sudo apt-get -y install python3-pip python3-setuptools
     - run: pip3 install wheel
     - run: pip3 install gixy
-    - run: ~/.local/bin/gixy nginx.conf
+    - run: gixy nginx.conf
