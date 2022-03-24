@@ -12,8 +12,7 @@ for server in ${servers[@]}; do
     remote=root@$server
 
     rsync -rptcv --chmod=D755,F644 --delete nginx.conf $remote:/etc/nginx/nginx.conf
-    ssh $remote sync /etc/nginx/nginx.conf
-    ssh $remote nginx -s reload
+    ssh $remote "sync /etc/nginx/nginx.conf && nginx -s reload"
 
     echo
 done
