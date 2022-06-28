@@ -9,6 +9,8 @@ if ! flock -n $fd; then
     exit 1
 fi
 
+gixy nginx.conf
+
 servers=({0..2}.grapheneos.network)
 
 for server in ${servers[@]}; do
