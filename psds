@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -o errexit -o nounset -o pipefail
+
+sha256() {
+    sha256sum | cut -d ' ' -f 1
+}
+
+echo -n "glpals.com lto2.dat: "
+curl -s https://gllto.glpals.com/7day/v5/latest/lto2.dat | sha256
+echo -n "glpals.com rtistatus.dat: "
+curl -s https://gllto.glpals.com/rtistatus4.dat | sha256
+echo -n "glpals.com rto.dat: "
+curl -s https://gllto.glpals.com/rto/v1/latest/rto.dat | sha256
+
+echo
+
+echo -n "agnss.goog lto2.dat: "
+curl -s https://agnss.goog/lto2.dat | sha256
+echo -n "agnss.goog rtistatus.dat: "
+curl -s https://agnss.goog/rtistatus.dat | sha256
+echo -n "agnss.goog rto.dat: "
+curl -s https://agnss.goog/rto.dat | sha256
+
+echo
+
+echo -n "grapheneos.org lto2.dat: "
+curl -s https://broadcom.psds.grapheneos.org/lto2.dat | sha256
+echo -n "grapheneos.org rtistatus.dat: "
+curl -s https://broadcom.psds.grapheneos.org/rtistatus.dat | sha256
+echo -n "grapheneos.org rto.dat: "
+curl -s https://broadcom.psds.grapheneos.org/rto.dat | sha256
