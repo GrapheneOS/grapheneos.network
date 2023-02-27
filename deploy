@@ -20,8 +20,7 @@ for server in ${servers[@]}; do
 
     remote=root@$server
 
-    rsync -rptcv --fsync --chmod=D755,F644 --delete nginx/nginx.conf $remote:/etc/nginx/nginx.conf
-    rsync -rptcv --fsync --chmod=D755,F644 --delete nginx/mime.types $remote:/etc/nginx/mime.types
+    rsync -ptcv --fsync --chmod=644 nginx/{nginx.conf,mime.types} $remote:/etc/nginx/
     ssh $remote nginx -s reload
 
     echo
