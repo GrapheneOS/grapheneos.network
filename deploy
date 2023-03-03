@@ -20,7 +20,7 @@ for server in ${servers[@]}; do
 
     remote=root@$server
 
-    rsync -ptcv --fsync --chmod=644 nginx/{nginx.conf,mime.types} $remote:/etc/nginx/
+    rsync -ptcv --fsync --chmod=644 nginx/{nginx.conf,mime.types,ffdhe2048.txt} $remote:/etc/nginx/
     ssh $remote nginx -s reload
 
     echo
