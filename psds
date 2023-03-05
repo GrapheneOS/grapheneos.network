@@ -3,22 +3,25 @@
 set -o errexit -o nounset -o pipefail
 
 sha256() {
-    echo -n "$1: "
-    curl -s "$2" | sha256sum | cut -d ' ' -f 1
+    echo -n "$(basename $1): "
+    curl -s "$1" | sha256sum | cut -d ' ' -f 1
 }
 
-sha256 "glpals.com lto2.dat" https://gllto.glpals.com/7day/v5/latest/lto2.dat
-sha256 "glpals.com rtistatus.dat" https://gllto.glpals.com/rtistatus4.dat
-sha256 "glpals.com rto.dat" https://gllto.glpals.com/rto/v1/latest/rto.dat
+echo gllto.glpals.com
+sha256 https://gllto.glpals.com/7day/v5/latest/lto2.dat
+sha256 https://gllto.glpals.com/rtistatus4.dat
+sha256 https://gllto.glpals.com/rto/v1/latest/rto.dat
 
 echo
 
-sha256 "agnss.goog lto2.dat" https://agnss.goog/lto2.dat
-sha256 "agnss.goog rtistatus.dat" https://agnss.goog/rtistatus.dat
-sha256 "agnss.goog rto.dat" https://agnss.goog/rto.dat
+echo agnss.goog
+sha256 https://agnss.goog/lto2.dat
+sha256 https://agnss.goog/rtistatus.dat
+sha256 https://agnss.goog/rto.dat
 
 echo
 
-sha256 "grapheneos.org lto2.dat" https://broadcom.psds.grapheneos.org/lto2.dat
-sha256 "grapheneos.org rtistatus.dat" https://broadcom.psds.grapheneos.org/rtistatus.dat
-sha256 "grapheneos.org rto.dat" https://broadcom.psds.grapheneos.org/rto.dat
+echo broadcom.psds.grapheneos.org
+sha256 https://broadcom.psds.grapheneos.org/lto2.dat
+sha256 https://broadcom.psds.grapheneos.org/rtistatus.dat
+sha256 https://broadcom.psds.grapheneos.org/rto.dat
