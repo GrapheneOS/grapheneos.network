@@ -43,29 +43,21 @@ echo Qualcomm
 echo
 
 echo path1.xtracloud.net
-sha256 https://path1.xtracloud.net/xtra3grcej.bin
-sha256 https://path1.xtracloud.net/xtra3Mgrcej.bin
 sha256 https://path1.xtracloud.net/xtra3Mgrbeji.bin
 
 echo
 
 echo path2.xtracloud.net
-sha256 https://path2.xtracloud.net/xtra3grcej.bin
-sha256 https://path2.xtracloud.net/xtra3Mgrcej.bin
 sha256 https://path2.xtracloud.net/xtra3Mgrbeji.bin
 
 echo
 
 echo path3.xtracloud.net
-sha256 https://path3.xtracloud.net/xtra3grcej.bin
-sha256 https://path4.xtracloud.net/xtra3Mgrcej.bin
 sha256 https://path3.xtracloud.net/xtra3Mgrbeji.bin
 
 for i in {0..2}; do
     echo
 
     echo qualcomm.psds.grapheneos.org via $i.grapheneos.network
-    sha256 https://qualcomm.psds.grapheneos.org/xtra3grcej.bin $i.grapheneos.network
-    sha256 https://qualcomm.psds.grapheneos.org/xtra3Mgrcej.bin $i.grapheneos.network
     sha256 https://qualcomm.psds.grapheneos.org/xtra3Mgrbeji.bin $i.grapheneos.network
 done
