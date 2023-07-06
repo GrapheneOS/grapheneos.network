@@ -13,7 +13,7 @@ fi
 
 gixy nginx/nginx.conf
 
-servers=({0..2}.grapheneos.network)
+servers=({0..3}.grapheneos.network)
 
 for server in ${servers[@]}; do
     echo $server

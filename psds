@@ -27,7 +27,7 @@ sha256 https://agnss.goog/lto2.dat
 sha256 https://agnss.goog/rtistatus.dat
 sha256 https://agnss.goog/rto.dat
 
-for i in {0..2}; do
+for i in {0..3}; do
     echo
 
     echo broadcom.psds.grapheneos.org via $i.grapheneos.network
