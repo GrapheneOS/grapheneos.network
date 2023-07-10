@@ -55,7 +55,7 @@ echo
 echo path3.xtracloud.net
 sha256 https://path3.xtracloud.net/xtra3Mgrbeji.bin
 
-for i in {0..2}; do
+for i in {0..3}; do
     echo
 
     echo qualcomm.psds.grapheneos.org via $i.grapheneos.network
