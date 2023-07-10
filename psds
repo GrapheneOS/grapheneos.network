@@ -2,6 +2,8 @@
 
 set -o errexit -o nounset -o pipefail
 
+. servers.sh
+
 sha256() {
     echo -n "$(basename $1): "
     if [[ -n ${2-} ]]; then
@@ -27,13 +29,13 @@ sha256 https://agnss.goog/lto2.dat
 sha256 https://agnss.goog/rtistatus.dat
 sha256 https://agnss.goog/rto.dat
 
-for i in {0..3}; do
+for server in ${servers[@]}; do
     echo
 
-    echo broadcom.psds.grapheneos.org via $i.grapheneos.network
-    sha256 https://broadcom.psds.grapheneos.org/lto2.dat $i.grapheneos.network
-    sha256 https://broadcom.psds.grapheneos.org/rtistatus.dat $i.grapheneos.network
-    sha256 https://broadcom.psds.grapheneos.org/rto.dat $i.grapheneos.network
+    echo broadcom.psds.grapheneos.org via $server
+    sha256 https://broadcom.psds.grapheneos.org/lto2.dat $server
+    sha256 https://broadcom.psds.grapheneos.org/rtistatus.dat $server
+    sha256 https://broadcom.psds.grapheneos.org/rto.dat $server
 done
 
 echo
@@ -55,9 +57,9 @@ echo
 echo path3.xtracloud.net
 sha256 https://path3.xtracloud.net/xtra3Mgrbeji.bin
 
-for i in {0..3}; do
+for server in ${servers[@]}; do
     echo
 
-    echo qualcomm.psds.grapheneos.org via $i.grapheneos.network
-    sha256 https://qualcomm.psds.grapheneos.org/xtra3Mgrbeji.bin $i.grapheneos.network
+    echo qualcomm.psds.grapheneos.org via $server
+    sha256 https://qualcomm.psds.grapheneos.org/xtra3Mgrbeji.bin $server
 done
