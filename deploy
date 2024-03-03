@@ -15,15 +15,15 @@ gixy nginx/nginx.conf
 
 . servers.sh
 
-rsync -ptcv --chmod=F755 --fsync --preallocate certbot-replicate root@${servers[0]}:/usr/local/bin/
-rsync -ptcv --chmod=F644 --fsync --preallocate replicate.conf root@${servers[0]}:/etc/systemd/system/certbot-renew.service.d/
+rsync -pcv --chmod=F755 --fsync --preallocate certbot-replicate root@${servers[0]}:/usr/local/bin/
+rsync -pcv --chmod=F644 --fsync --preallocate replicate.conf root@${servers[0]}:/etc/systemd/system/certbot-renew.service.d/
 
 for server in ${servers[@]}; do
     echo $server
 
     remote=root@$server
 
-    rsync -ptcv --chmod=644 --fsync --preallocate nginx/{nginx.conf,mime.types,ffdhe2048.txt} $remote:/etc/nginx/
+    rsync -pcv --chmod=644 --fsync --preallocate nginx/{nginx.conf,mime.types,ffdhe2048.txt} $remote:/etc/nginx/
     ssh $remote nginx -s reload
 
     echo
