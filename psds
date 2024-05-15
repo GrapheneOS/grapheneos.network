@@ -40,6 +40,22 @@ done
 
 echo
 
+echo Samsung
+
+echo
+
+echo 1.ssiloc.com
+sha256 https://1.ssiloc.com/p4/42F3
+
+for server in ${servers[@]}; do
+    echo
+
+    echo 1.ssiloc.com via $server
+    sha256 https://samsung.psds.grapheneos.org/p4/42F3 $server
+done
+
+echo
+
 echo Qualcomm
 
 echo
