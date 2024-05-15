@@ -16,14 +16,12 @@ sha256() {
 echo Broadcom
 
 echo
-
 echo gllto.glpals.com
 sha256 https://gllto.glpals.com/7day/v5/latest/lto2.dat
 sha256 https://gllto.glpals.com/rtistatus4.dat
 sha256 https://gllto.glpals.com/rto/v1/latest/rto.dat
 
 echo
-
 echo agnss.goog
 sha256 https://agnss.goog/lto2.dat
 sha256 https://agnss.goog/rtistatus.dat
@@ -31,7 +29,6 @@ sha256 https://agnss.goog/rto.dat
 
 for server in ${servers[@]}; do
     echo
-
     echo broadcom.psds.grapheneos.org via $server
     sha256 https://broadcom.psds.grapheneos.org/lto2.dat $server
     sha256 https://broadcom.psds.grapheneos.org/rtistatus.dat $server
@@ -39,11 +36,9 @@ for server in ${servers[@]}; do
 done
 
 echo
-
 echo Samsung
 
 echo
-
 echo 1.ssiloc.com
 sha256 https://1.ssiloc.com/p4/42F3
 
@@ -55,27 +50,22 @@ for server in ${servers[@]}; do
 done
 
 echo
-
 echo Qualcomm
 
 echo
-
 echo path1.xtracloud.net
 sha256 https://path1.xtracloud.net/xtra3Mgrbeji.bin
 
 echo
-
 echo path2.xtracloud.net
 sha256 https://path2.xtracloud.net/xtra3Mgrbeji.bin
 
 echo
-
 echo path3.xtracloud.net
 sha256 https://path3.xtracloud.net/xtra3Mgrbeji.bin
 
 for server in ${servers[@]}; do
     echo
-
     echo qualcomm.psds.grapheneos.org via $server
     sha256 https://qualcomm.psds.grapheneos.org/xtra3Mgrbeji.bin $server
 done
