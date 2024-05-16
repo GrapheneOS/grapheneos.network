@@ -5,7 +5,8 @@ set -o errexit -o nounset -o pipefail
 . servers.sh
 
 sha256() {
-    echo -n "$(basename $1): "
+    echo -n /
+    echo $1 | cut -d / -f 4-
     if [[ -n ${2-} ]]; then
         curl -s "$1" --connect-to $(echo $1 | cut -d / -f 3):443:$2:443
     else
