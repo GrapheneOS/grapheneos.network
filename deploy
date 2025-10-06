@@ -11,7 +11,7 @@ if ! flock -n $fd; then
     exit 1
 fi
 
-gixy --skips add_header_content_type,proxy_pass_normalized nginx/nginx.conf
+gixy --skips hash_without_default,proxy_pass_normalized nginx/nginx.conf
 
 . servers.sh
 
